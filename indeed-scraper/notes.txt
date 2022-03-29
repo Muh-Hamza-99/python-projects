@@ -1,0 +1,16 @@
+- Requests DONE
+- BeautifulSoup DONE
+- LXML DONE 
+- CSV (Built-in) DONE
+- Datetime (Built-in) DONE
+
+- Get a URL (function) DONE
+- Scrape data from URL 
+- Store it in a tuple
+- Individually add each tuple to an array
+- Write this array to a CSV file
+
+- q = Job Title
+- l = Location
+
+- get_url function(position = Job Title, location = Location)
