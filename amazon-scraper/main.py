@@ -3,5 +3,11 @@ from bs4 import BeautifulSoup
 import csv
 
 driver = webdriver.Firefox()
-url = "https://www.amazon.com"
+
+def get_url(search_term):
+    template = "https://www.amazon.com/s?k={}"
+    search_term = search_term.replace(" ", "+")
+    return template.format(search_term)
+
+url = get_url("monitor")
 driver.get(url)
