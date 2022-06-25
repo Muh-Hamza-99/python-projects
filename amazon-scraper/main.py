@@ -17,10 +17,17 @@ def extract_record(item):
     anchor_tag = item.h2.a
     product_title = anchor_tag.text
     url = "https://www.amazon.com" + anchor_tag.get("href")
-    price_tag = item.find("span", "a-price")
-    price = price_tag.find("span", "a-offscreen").text
-    rating = item.i.text
-    review_count = item.find("span", { "class": "a-size-base", "dir": "auto" }).text
+    try:
+        price_tag = item.find("span", "a-price")
+        price = price_tag.find("span", "a-offscreen").text
+    except AttributeError: 
+        return
+    try:
+        rating = item.i.text
+        review_count = item.find("span", { "class": "a-size-base", "dir": "auto" }).text
+    except AttributeError:
+        rating = ""
+        review_count = ""
     result = (product_title, url, price, rating, review_count)
     return result
 
