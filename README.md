@@ -1,4 +1,4 @@
-# python-projects
+# 🐍 python-projects
 
 ## 📃 Description:
 A collection of python projects from when I started programming, with projects related to web scraping, visualisation, etc.
