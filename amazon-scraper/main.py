@@ -19,8 +19,8 @@ def extract_record(item):
     except AttributeError: 
         return
     try:
-        rating = item.i.text
-        review_count = item.find("span", { "class": "a-size-base", "dir": "auto" }).text
+        rating = item.i.span.text
+        review_count = item.find("span", { "class": "a-size-base" }).text
     except AttributeError:
         rating = ""
         review_count = ""
