@@ -34,4 +34,6 @@ def extract_record(item):
 records = []
 results = soup.find_all("div", { "data-component-type": "s-search-result" })
 for item in results:
-    records.append(extract_record(item))
+    record = extract_record(item)
+    if record:
+        records.append(record)
