@@ -12,7 +12,6 @@ def get_url(search_term):
 url = get_url("monitor")
 driver.get(url)
 soup = BeautifulSoup(driver.page_source, "html.parser")
-results = soup.find_all("div", { "data-component-type": "s-search-result" })
 
 def extract_record(item):
     anchor_tag = item.h2.a
@@ -24,3 +23,8 @@ def extract_record(item):
     review_count = item.find("span", { "class": "a-size-base", "dir": "auto" }).text
     result = (product_title, url, price, rating, review_count)
     return result
+
+records = []
+results = soup.find_all("div", { "data-component-type": "s-search-result" })
+for item in results:
+    records.append(extract_record(item))
