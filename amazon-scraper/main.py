@@ -11,3 +11,6 @@ def get_url(search_term):
 
 url = get_url("monitor")
 driver.get(url)
+soup = BeautifulSoup(driver.page_source, "html.parser")
+results = soup.find_all("div", { "data-component-type": "s-search-result" })
+

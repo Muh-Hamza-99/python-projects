@@ -56,3 +56,18 @@ Read port: 56041
 DevTools listening on ws://localhost:56022/devtools/browser/560d2bee-bafc-4c1c-9254-a8e4ddcdcc57
 1656092591405	Marionette	INFO	Stopped listening on port 56041
 console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1656135101925	geckodriver	INFO	Listening on 127.0.0.1:55575
+1656135104981	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55576" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\ASUS\\AppData\\Local\\Temp\\rust_mozprofileSreyjw"
+1656135105738	Marionette	INFO	Marionette enabled
+WebDriver BiDi listening on ws://localhost:55576
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\ASUS\\AppData\\Local\\Temp\\rust_mozprofileSreyjw\\search.json.mozlz4", (void 0)))
+1656135107992	Marionette	INFO	Listening on port 55602
+DevTools listening on ws://localhost:55576/devtools/browser/aef25869-452e-4241-bbc3-12af0d4703be
+Read port: 55602
+1656135108083	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://www.amazon.com/s?k=monitor line 12051 > injectedScript, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1656135115940	Marionette	INFO	Stopped listening on port 55602
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+
+###!!! [Parent][PGPUParent] Error: RunMessage(msgname=PGPU::Msg_ShutdownVR) Channel closing: too late to send/recv, messages will be lost
+
