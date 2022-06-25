@@ -2,18 +2,12 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import csv
 
-driver = webdriver.Firefox()
-
 def get_url(search_term):
     template = "https://www.amazon.com/s?k={}"
     search_term = search_term.replace(" ", "+")
     url = template.format(search_term)
     url += "&page={}"
     return url
-
-url = get_url("monitor")
-driver.get(url)
-soup = BeautifulSoup(driver.page_source, "html.parser")
 
 def extract_record(item):
     anchor_tag = item.h2.a
@@ -33,9 +27,22 @@ def extract_record(item):
     result = (product_title, url, price, rating, review_count)
     return result
 
-records = []
-results = soup.find_all("div", { "data-component-type": "s-search-result" })
-for item in results:
-    record = extract_record(item)
-    if record:
-        records.append(record)
+def main(search_term):
+    driver = webdriver.Firefox()
+    records = []
+    url = get_url(search_term)
+    for page in range(1, 21):
+        driver.get(url.format(page))
+        soup = BeautifulSoup(driver.page_source, "html.parser")
+        results = soup.find_all("div", { "data-component-type": "s-search-result" })
+        for item in results:
+            record = extract_record(item)
+            if record:
+                records.append(record)
+    driver.close()
+    with open("results.csv", "w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerow(["Product Title", "URL", "Price", "Rating", "Review Count"])
+        writer.writerows(records)
+
+main("keyboard")
