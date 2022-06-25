@@ -20,7 +20,7 @@ def extract_record(item):
         return
     try:
         rating = item.i.span.text
-        review_count = item.find("span", { "class": "a-size-base" }).text
+        review_count = item.find("span", class_="a-size-base").text
     except AttributeError:
         rating = ""
         review_count = ""
@@ -40,9 +40,9 @@ def main(search_term):
             if record:
                 records.append(record)
     driver.close()
-    with open("results.csv", "w", newline="", encoding="utf-8") as file:
+    with open("amazon-scraper-results.csv", "w", newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
         writer.writerow(["Product Title", "URL", "Price", "Rating", "Review Count"])
         writer.writerows(records)
 
-main("keyboard")
+main(input("Enter a product you want to search for:\n"))
