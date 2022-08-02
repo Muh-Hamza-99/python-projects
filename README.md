@@ -24,5 +24,5 @@ A visualisation program that sorts randomly-generated arrays based on the select
 ### 💬 whatsapp-spam-bot
 An extremely simple project I made in less than 5 minutes to payback an annoying friend that loved spamming.
 
-## 👩‍💻 Technologies Used:
+## 👩‍💻 Technologies Used
 [![Technologies](https://skillicons.dev/icons?i=python,selenium&theme=dark)](https://skillicons.dev)
