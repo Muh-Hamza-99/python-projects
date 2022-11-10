@@ -21,6 +21,9 @@ Classic snake game built using Pygame. My first ever project.
 ### 📊 sorting-visualiser
 A visualisation program that sorts randomly-generated arrays based on the selected sorting algorithm chosen, with each element in the array having a number which corresponds with it's height on the visualisation. The GUI is built using Pygame.
 
+### ➕ timestable-bot
+A simple project that uses a simple script to automatically solve timestable questions on the DrFrost website and make me the god of mental arithmetic.
+
 ### 💬 whatsapp-spam-bot
 An extremely simple project I made in less than 5 minutes to payback an annoying friend that loved spamming.
 
